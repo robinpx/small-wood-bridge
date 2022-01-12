@@ -19,7 +19,7 @@ function setup() {
 
 function draw() {
     background(255);
-    frameRate(24);
+    frameRate(30);
     for (let i=0;i < banners.length;i++) {
         banners[i].display();
     }
