@@ -7,7 +7,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight, WEBGL);
+    createCanvas(displayWidth, displayHeight, WEBGL);
     textFont(fontFamily);
     noStroke();
     aspectRatio = width > height ? width : height;
