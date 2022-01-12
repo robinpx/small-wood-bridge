@@ -10,35 +10,53 @@
             margin:0;
             padding:0;
         }
+
         body {
             font-family:'Courier New', Courier, monospace;
             font-size:calc(8px + 1vw);
-            text-align:center;
             line-height:150%;
-            background:black;
         }
 
         #defaultCanvas0 {
             position:absolute;
-            width:100vw;
-            height:100vh;
+            width:100%;
+            height:100%;
             top:0;
             left:0;
+            overflow:hidden;
+        }
+
+        #landingpage {
+            position:relative;
+        }
+
+        #container {
+            width:100%;
+        }
+
+        .info {
+            width:100%;
+            text-align:center;
+            position:absolute;
+            padding:0em 1em 4em 0em;
+            top:100%;
         }
 
     </style>
 </head>
 <body>
+    <div id="container">
     <div id="landingpage">
     <script src="./sketch.js"></script>
     </div>
 
-    <!-- <div class="info">
+    <div class="info">
         <p>
             <b>TP-LINK E7BB</b><br/>
             smallwoodbridgefreeinternet
         </p>
-    </div> -->
+    </div> 
+</div>
 </body>
 
 </html>
