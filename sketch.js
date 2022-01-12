@@ -1,5 +1,6 @@
 let fontFamily;
 let banners=[];
+let aspectRatio = 0;
 
 function preload() {
     fontFamily = loadFont("./assets/NotoSansSC-Medium.otf");
@@ -9,11 +10,11 @@ function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
     textFont(fontFamily);
     noStroke();
-    banners.push(new Banner("欢迎，来到若冰和景天家！", random(-140,-80), random(-20,20), width/50, width/20));
-    banners.push(new Banner("WELCOME TO SMALL WOOD BRIDGE!", random(-50,50),random(-50,50), width/50, 1));
-    banners.push(new Banner("HAVE A GOOD DAY :)", random(70,160), random(-20,20), width/20, width*2));
-    banners.push(new Banner("小木桥路", random(0,100), random(-200,-60), width/10, width/2000));
-
+    aspectRatio = width > height ? width : height;
+    banners.push(new Banner("欢迎，来到若冰和景天家！", random(-140,-80), random(-20,20), aspectRatio/50, aspectRatio/20));
+    banners.push(new Banner("WELCOME TO SMALL WOOD BRIDGE!", random(-50,50),random(-50,50), aspectRatio/50, 1));
+    banners.push(new Banner("HAVE A GOOD DAY :)", random(70,160), random(-20,20), aspectRatio/20, aspectRatio*2));
+    banners.push(new Banner("小木桥路", random(0,100), random(-200,-60), aspectRatio/10, aspectRatio/2000));
 }
 
 function draw() {
@@ -58,23 +59,22 @@ class Letter {
         this.length = bannerLen;
         this.offsetYbounce=offsetYbounce;
         this.spacing=spacing;
-        this.texture = createGraphics(this.size,this.size);
+        this.texture = createGraphics(this.size,this.size+5);
     }
             
     display(i) {
         angleMode(DEGREES);
         this.texture.textSize(this.size);
-        this.texture.text(this.letter,0,this.size-4);
+        this.texture.text(this.letter,0,this.size-2);
         fill(0);
-
         texture(this.texture);
 
         push();
         rotateX(this.offsetYbounce * sin(frameCount*0.5));
         rotateY((360 / this.length) * i - frameCount*0.3);
         //rotateZ(frameCount*0.5);
-        translate(0,0,(width*this.length)/(40*PI)+this.spacing);
-        plane(this.size,this.size);
+        translate(0,0,(aspectRatio*this.length)/(40*PI)+this.spacing);
+        plane(this.size,this.size+5);
         pop();
     }
 }
