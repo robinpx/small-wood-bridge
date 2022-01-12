@@ -8,7 +8,6 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
-    textFont(fontFamily);
     noStroke();
     aspectRatio = width > height ? width : height*1.5;
     banners.push(new Banner("欢迎来到若冰和景天家！", random(-140,-80), random(-20,20), aspectRatio/30, aspectRatio/20));
@@ -66,6 +65,7 @@ class Letter {
         angleMode(DEGREES);
         this.texture.textSize(this.size);
         this.texture.text(this.letter,0,this.size-2);
+        // this.texture.textFont(fontFamily);
         fill(0);
         texture(this.texture);
 

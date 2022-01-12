@@ -1,2 +1,3 @@
 # small-wood-bridge
-Jingtian and Robin's digital welcome mat
+![small-wood-bridge](./small-wood-bridge.png)
+Jingtian and Robin's digital welcome mat. :)
