@@ -11,10 +11,10 @@ function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
     noStroke();
     aspectRatio = width > height ? width : height*1.5;
-    banners.push(new Banner("欢迎来到若冰和景天家！", random(-140,-80), random(-20,20), aspectRatio/30, aspectRatio/20));
-    banners.push(new Banner("WELCOME TO SMALL WOOD BRIDGE!", random(-50,50),random(-50,50), aspectRatio/55, 1));
-    banners.push(new Banner("HAVE A GOOD DAY :)", random(-50,50), random(-30,40), aspectRatio/20, aspectRatio*2));
-    banners.push(new Banner("小木桥路", random(0,100), random(-200,-60), aspectRatio/10, aspectRatio/2000));
+    banners.push(new Banner("欢迎来到若冰和景天家！", random(-150,-90), random(-20,20), aspectRatio/30, aspectRatio/20));
+    banners.push(new Banner("WELCOME TO SMALL WOOD BRIDGE!", random(-60,40),random(-50,50), aspectRatio/55, 1));
+    banners.push(new Banner("HAVE A GOOD DAY :)", random(-60,40), random(-30,40), aspectRatio/20, aspectRatio*2));
+    banners.push(new Banner("小木桥路", random(-10,90), random(-200,-60), aspectRatio/10, aspectRatio/2000));
 }
 
 function draw() {
