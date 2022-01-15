@@ -1,6 +1,7 @@
 let fontFamily;
 let banners=[];
 let aspectRatio = 0;
+let version = 1;
 
 function preload() {
     fontFamily = loadFont("./assets/NotoSansSC-Medium.otf");
@@ -17,12 +18,18 @@ function setup() {
 }
 
 function draw() {
-    background(255);
+    if (version === 1) {
+        background(255);
+    }
     frameRate(20);
     for (let i=0;i < banners.length;i++) {
         banners[i].display();
     }
 
+}
+
+function mousePressed() {
+    version = version == 1 ? 2 : 1
 }
 
 class Banner {
