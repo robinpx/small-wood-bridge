@@ -14,7 +14,7 @@
 
         body {
             font-family:'Courier New', Courier, monospace;
-            font-size:calc(8px + 1vw);
+            font-size:calc(10px + 1vmin);
             line-height:150%;
         }
 
@@ -46,6 +46,21 @@
 	    z-index:999;
         }
 
+	.left, .right {
+	   position:absolute;
+	   bottom:0;
+	   padding:1em;
+	   z-index:99999;
+	}
+
+	.left {
+	   left:1em;
+	}
+
+	.right {
+	  right:1em;
+	}
+
     </style>
 </head>
 <body>
@@ -53,13 +68,20 @@
     <div id="landingpage">
     <script src="./sketch.js"></script>
     </div>
+    <div class="left">
+	   <a href="./screenings">screenings</a> (coming soon)
+    </div>
 
     <div class="info">
-        <p>
+	<p>
             <b>TP-LINK E7BB</b><br/>
             smallwoodfreeinternet
         </p>
     </div> 
+
+    <div class="right">
+	<a href="https://github.com/robinpx/small-wood-bridge">github</a>
+    </div>
 </div>
 </body>
 
